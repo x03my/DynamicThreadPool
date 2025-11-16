@@ -1,0 +1,37 @@
+#server:
+#  port: 8080
+#spring:
+#  Dtp:
+#    executors:
+#      # 线程池1
+#      - poolName: dtpExecutor1
+#        corePoolSize: 2
+#        maximumPoolSize: 5
+      #...其他参数
+#      # 线程池2
+#      - poolName: dtpExecutor2
+#        corePoolSize: 2
+#        maximumPoolSize: 15
+
+
+
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: dtpDev
+  cloud:
+    nacos:
+      server-addr: 192.168.129.215:8848
+      password: nacos
+      username: nacos
+      discovery:
+        namespace: dtpDev
+        group: dtpDev-project
+      config:
+        namespace: dtpDev
+        group: dtpDev-project
+        file-extension: yml
+        refresh-enabled: true
+  profiles:
+    active: dev

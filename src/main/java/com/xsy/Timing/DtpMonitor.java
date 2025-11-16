@@ -52,7 +52,7 @@ public class DtpMonitor implements SmartLifecycle {
         scheduledFuture = Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
             monitor();
             alarm();
-        }, 5, 5, TimeUnit.SECONDS);
+        }, 10, 10, TimeUnit.SECONDS);
         running = true;
 
     }
